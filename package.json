@@ -1,0 +1,26 @@
+{
+  "name": "meanapp2",
+  "version": "1.0.0",
+  "description": "A sample MEAN app for Book collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "importBooks": "mongoimport.exe --db MeanApp2 --collection books --file books.json --jsonArray"
+  },
+  "keywords": [
+    "books",
+    "mean",
+    "javascript",
+    "mongodb",
+    "express",
+    "node",
+    "angular"
+  ],
+  "author": "Sampada Wagde",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.2.7"
+  }
+}
