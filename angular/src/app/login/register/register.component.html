@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="form-row align-items-center">
+      <label for="uname" class="col-sm-2 col-form-label col-form-label-lg">User Name:</label>
+      <input type="text" class="form-control form-control-lg" id="uname" placeholder="Enter User Name" name="username"
+        [(ngModel)]="username">
+    </div>
+    <div class="form-row align-items-center">
+      <label for="pwd" class="col-sm-2 col-form-label col-form-label-lg">Password:</label>
+      <input type="password" class="form-control form-control-lg" id="pwd" placeholder="Enter password" name="password"
+        [(ngModel)]="password">
+    </div>
+    <button type="submit" (click)="onRegister()" class="btn btn-primary btn-block my-4">Register</button>  
+  </div> 

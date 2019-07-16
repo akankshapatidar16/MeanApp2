@@ -8,5 +8,7 @@ router.get('/', (req, res)=>{
 })
 
 router.post('/authenticate', userController.authenticate)
+router.post('/register', userController.register)
+
 exports.router = router
 //module.exports = router
