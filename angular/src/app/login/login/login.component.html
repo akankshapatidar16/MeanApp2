@@ -1,4 +1,5 @@
 <div class="container">
+  <span *ngIf="authFailure" style="color: red">Authetication failed. Please try again.</span>
   <div class="form-row align-items-center">
     <label for="uname" class="col-sm-2 col-form-label col-form-label-lg">User Name:</label>
     <input type="text" class="form-control form-control-lg" id="uname" placeholder="Enter User Name" name="username"

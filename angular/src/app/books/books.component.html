@@ -1,0 +1,30 @@
+<table class='table table-striped'>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Country</th>
+    <th>Language</th>
+    <th>Pages</th>
+    <th>Year</th>
+  </tr>
+  <tr *ngFor='let book of books'>
+    <td>
+      {{book.title}}
+    </td>
+    <td>
+      {{book.author}}
+    </td>
+    <td>
+      {{book.country}}
+    </td>
+    <td>
+      {{book.language}}
+    </td>
+    <td>
+      {{book.pages}}
+    </td>
+    <td>
+      {{book.year}}
+    </td>
+  </tr>
+</table>

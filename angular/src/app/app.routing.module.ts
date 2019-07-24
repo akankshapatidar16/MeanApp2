@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './login/register/register.component';
+import { BooksComponent } from './books/books.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,12 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
-  }, {
+  },
+  {
+    path: 'books',
+    component: BooksComponent
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

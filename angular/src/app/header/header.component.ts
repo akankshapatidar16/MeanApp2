@@ -7,11 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isAuthenticated:boolean = false;
+  
   constructor() { }
 
-  ngOnInit() {
-    //this.isAuthenticated = true;
+  ngOnInit() {   
   }
-  
+
 }

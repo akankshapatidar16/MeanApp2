@@ -7,16 +7,19 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from "./app.routing.module";
 import { LoginModule } from './login/login.module';
+import { BooksComponent } from './books/books.component';
+import { BookService } from 'src/services/book.service';
+import { HeaderlinksComponent } from './header/headerlinks/headerlinks.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
-    HeaderComponent, FooterComponent, HomeComponent
+    HeaderComponent, FooterComponent, HomeComponent, BooksComponent, HeaderlinksComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, LoginModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
