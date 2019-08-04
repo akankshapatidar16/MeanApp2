@@ -7,6 +7,7 @@ import { Http, Headers } from "@angular/http";
 })
 export class AuthenticationService {
     private url: string = environment.apiURL;
+    public isLoggedIn: boolean = false;
 
     constructor(private http:Http) {}
 

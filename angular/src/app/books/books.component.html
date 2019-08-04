@@ -6,6 +6,8 @@
     <th>Language</th>
     <th>Pages</th>
     <th>Year</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
   </tr>
   <tr *ngFor='let book of books'>
     <td>
@@ -24,7 +26,9 @@
       {{book.pages}}
     </td>
     <td>
-      {{book.year}}
+      {{book.year | suffixADorBC}}
     </td>
+    <td><button class="fa fa-trash" (click)="deleteBook(book._id)"></button></td>
+    <td><button class="fa fa-edit" (click)="editBookDialog(book)"></button></td>    
   </tr>
 </table>

@@ -1,0 +1,41 @@
+<table class="">
+  <thead>
+    <p>Enter Book Details:</p>
+  </thead>
+  <tbody>
+
+    <tr>
+       <!-- <td><mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="book.title" name="mattitle">
+          </mat-form-field></td>-->
+      <td><label for="title">Title</label></td>
+      <td><input type="text" [(ngModel)]="item.title" name="title" required></td>
+    </tr>
+    <tr>
+      <td><label for="author">Author</label></td>
+      <td><input type="text" [(ngModel)]="item.author" name="author"></td>
+    </tr>
+    <tr>
+      <td><label for="country">Country</label></td>
+      <td><input type="text" [(ngModel)]="item.country" name="country"></td>
+    </tr>
+    <tr>
+      <td><label for="language">Language</label></td>
+      <td><input type="text" [(ngModel)]="item.language" name="language"></td>
+    </tr>
+    <tr>
+      <td><label for="pages">Pages</label></td>
+      <td><input type="text" [(ngModel)]="item.pages" name="pages"></td>
+    </tr>
+    <tr>
+      <td><label for="year">Year</label></td>
+      <td><input type="text" [ngModel]="item.year | suffixADorBC" (ngModelChange)="item.year=$event" name="year"></td>
+    </tr>
+    <tr>
+      <td><button mat-button mat-dialog-close>Cancel</button></td>
+      <td class="okButton"><button mat-button (click)='onSubmit(item)' [mat-dialog-close]="true">OK</button> </td>
+    </tr>
+
+
+  </tbody>
+</table>

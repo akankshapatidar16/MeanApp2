@@ -15,6 +15,20 @@ exports.getOneBook = async function (req, res) {
     res.send(userResponse)
 }
 
+exports.deleteBook = async function (req, res) {
+    let id = req.params.id;
+    console.log('books contoller deleteBook, id=', id)
+    let userResponse = await booksService.deleteBook(id)   
+    res.send(userResponse)
+}
+
+exports.editBook = async function (req, res) {
+    let id = req.params.id;
+    console.log('books contoller editBook, id=', id)
+    let userResponse = await booksService.editBook(id, req.body)   
+    res.send(userResponse)
+}
+
 exports.getBooksByQuery = async function (req, res) {
     let country = req.query.country;
     let author = req.query.author;

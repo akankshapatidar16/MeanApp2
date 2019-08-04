@@ -11,5 +11,9 @@ router.get('/country/:country', booksController.getBooksByCountry)
 
 router.get('/', booksController.getBooksByQuery)
 
+router.delete('/:id', booksController.deleteBook)
+
+router.put('/:id', booksController.editBook)
+
 exports.router = router
 //module.exports = router

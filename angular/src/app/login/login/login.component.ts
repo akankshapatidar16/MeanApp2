@@ -9,8 +9,7 @@ import { AuthenticationService } from 'src/services/authenticate.service';
 })
 export class LoginComponent implements OnInit {
   username: string;
-  password: string;
-  authFailure: boolean;
+  password: string;  
 
   constructor(private authservice: AuthenticationService, private router: Router) { }
 
@@ -23,13 +22,13 @@ export class LoginComponent implements OnInit {
     this.authservice.authenticate(this.username, this.password).subscribe(response => {
       let result = response.json();
      
-      if (result.authenticated) {
-        this.authFailure = false;        
+      if (result.authenticated) {        
         this.router.navigate(["books"]);
+        this.authservice.isLoggedIn = true;
       }
-      else {
-        this.authFailure = true;
-        console.log("authentication failed");        
+      else {        
+        console.log("authentication failed"); 
+        this.authservice.isLoggedIn = false;       
       }
     });
   }

@@ -5,7 +5,7 @@ const ObjectID = require('mongodb').ObjectID;
 exports.getAllBooks = async function (page, limit) {
     console.log('in books service getAllBooks')
     try {
-        const client = await mongoClient.connect(config.database, {useNewUrlParser: true})
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
         console.log("Connected to database");
         let result = await client.db().collection("books").find().toArray();
         client.close();
@@ -18,12 +18,41 @@ exports.getAllBooks = async function (page, limit) {
 exports.getBookById = async function (id) {
     console.log('in books service getAllBooks')
     try {
-        const client = await mongoClient.connect(config.database, {useNewUrlParser: true})
-        console.log("Connected to database, id=", id);        
-        let query= {"_id": ObjectID(id)};              
-        let result = await client.db().collection("books").findOne(query);  
-        client.close();     
-       return result;
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
+        console.log("Connected to database, id=", id);
+        let query = { "_id": ObjectID(id) };
+        let result = await client.db().collection("books").findOne(query);
+        client.close();
+        return result;
+    } catch (error) {
+        console.log('db error:', error)
+    }
+}
+
+exports.deleteBook = async function (id) {
+    console.log('in books service deleteBook')
+    try {
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
+        console.log("Connected to database, id=", id);
+        let query = { "_id": ObjectID(id) };
+        let result = await client.db().collection("books").deleteOne(query);
+        client.close();
+        return result;
+    } catch (error) {
+        console.log('db error:', error)
+    }
+}
+
+exports.editBook = async function (id, book) {
+    console.log('in books service editBook')
+    try {
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
+        console.log("Connected to database, id=", id);
+        let query = { "_id": ObjectID(id) };
+        let updatedBook = { $set: book };
+        let result = await client.db().collection("books").updateOne(query, updatedBook);
+        client.close();
+        return result;
     } catch (error) {
         console.log('db error:', error)
     }
@@ -32,9 +61,9 @@ exports.getBookById = async function (id) {
 exports.getBooksByCountry = async function (country) {
     console.log('in books service getBooksByCountry')
     try {
-        const client = await mongoClient.connect(config.database, {useNewUrlParser: true})
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
         console.log("Connected to database");
-        let query= {"country": country};              
+        let query = { "country": country };
         let result = await client.db().collection("books").find(query).toArray();
         client.close();
         return result;
@@ -46,7 +75,7 @@ exports.getBooksByCountry = async function (country) {
 exports.getBooksByQuery = async function (query) {
     console.log('in books service getBooksByCountry')
     try {
-        const client = await mongoClient.connect(config.database, {useNewUrlParser: true})
+        const client = await mongoClient.connect(config.database, { useNewUrlParser: true })
         console.log("Connected to database");
         //let query= {"country": query};    //TODO author or country!          
         let result = await client.db().collection("books").find(query).toArray();
