@@ -2,10 +2,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const user = require('./router/user.router')
 const books = require('./router/books.router')
+const path = require('path')
 const app = express()
 const port = 9000
 
 app.use(bodyParser.json())
+
+app.use(express.static(path.join(__dirname, 'public/angular')));
 
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');

@@ -1,3 +1,3 @@
 module.exports = {
-    database: "mongodb://localhost:27017/MeanApp2"
+    database: "mongodb://admin:pwd@localhost:27017/MeanApp2?authSource=admin"
 }

@@ -1,2 +1,9 @@
 /node_modules/
+/public/
 
+angular/src/assets/0.jpg
+angular/src/assets/_1.jpg
+angular/src/assets/_2.jpg
+angular/src/assets/_3.jpg
+angular/src/assets/__1.jpg
+.gitignore
